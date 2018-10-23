@@ -1,0 +1,6 @@
+framework module Pods_bi_ios_2018 {
+  umbrella header "Pods-bi-ios-2018-umbrella.h"
+
+  export *
+  module * { export * }
+}
