@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BubblesViewController.swift
 //  bi-ios-2018
 //
 //  Created by Jan Misar on 16.10.18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BubblesViewController: UIViewController {
 
     @IBOutlet weak var fireButton: UIButton!
     weak var contentView: UIView!
