@@ -40,7 +40,7 @@ class AutolayoutViewController: UIViewController {
         redView.snp.makeConstraints { make in
             make.leading.equalTo(10)
             make.top.equalTo(greenView.snp.bottom).offset(20)
-            make.height.equalTo(200)
+            make.height.equalTo(20)
         }
         
         let blueView = UIView()
@@ -51,6 +51,26 @@ class AutolayoutViewController: UIViewController {
             make.top.height.width.equalTo(redView)
             make.trailing.equalTo(-10)
         }
+        
+        // Content hugging & compression resistance
+        let originalImage = UIImage(named: "demonic")
+        let flippedImage = UIImage(cgImage: originalImage!.cgImage!, scale: UIScreen.main.scale, orientation: .upMirrored)
+        let leftDemonicView = UIImageView(image: flippedImage)
+        view.addSubview(leftDemonicView)
+        leftDemonicView.snp.makeConstraints { make in
+            make.leading.equalTo(10)
+            make.top.equalTo(blueView.snp.bottom)
+        }
+        
+        let rightDemonicView = UIImageView(image: #imageLiteral(resourceName: "demonic.png"))
+        view.addSubview(rightDemonicView)
+        rightDemonicView.snp.makeConstraints { make in
+            make.leading.equalTo(leftDemonicView.snp.trailing).offset(15)
+            make.top.equalTo(leftDemonicView)
+            make.trailing.equalTo(-10)
+        }
+        // we want right demonic to win!
+        rightDemonicView.setContentHuggingPriority(.required, for: .horizontal)
     }
     
     override func viewDidLoad() {
