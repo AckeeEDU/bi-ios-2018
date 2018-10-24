@@ -22,6 +22,16 @@ branch: `03-views`
 - Pixels vs. points (https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions)
 
 ## 4. Autolayout
+branch: `04-autolayout`
+- CocoaPods.org pro third party knihovny
+- autolayout v interface builderu
+- autolayout v kódu (`NSLayoutConstraint`)
+- autolayout pomocí **SnapKitu**
+- `intrinsicContentSize` a `contentHugging/contentCompressionResistance`
+- Úprava constraints v runtime (update konstant)
+- jednoduché animování autolayoutu
+- UIStackView
+
 ## 5. Recognizers + controls
 ## 6. Controllers (Modal / Navigation / Tab / Alert / split / …)
 ## 7. Architektura aplikace (MVC, MVVM)
