@@ -41,12 +41,17 @@ class ActionViewController : UIViewController {
         controlPanel.shapeSegment.addTarget(viewModel, action: #selector(viewModel.shapeForControl(_:)), for: .valueChanged)
         controlPanel.sizeSlider.addTarget(viewModel, action: #selector(viewModel.sizeForControl(_:)), for: .valueChanged)
         
+        viewModel.didUpdate = {
+            self.controlPanel.valuesLabel.text = self.viewModel.overView
+        }
+        
     }
     
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
         let rect = viewModel.createShape(position: location)
         view.addSubview(rect)
+        
     
     }
     

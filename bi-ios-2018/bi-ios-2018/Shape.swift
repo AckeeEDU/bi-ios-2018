@@ -16,8 +16,7 @@ struct Shape {
     }
     
     var tag : Int
-    var type : ShapeType
     var color : UIColor
-    var size : CGFloat
+    var size : Float
     var origin : CGPoint
 }

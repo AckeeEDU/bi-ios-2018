@@ -15,7 +15,7 @@ class ControlPanelView : UIView {
     weak var colorSegment : UISegmentedControl!
     weak var shapeSegment : UISegmentedControl!
     weak var sizeSlider : UISlider!
-    
+    weak var valuesLabel : UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,12 +33,16 @@ class ControlPanelView : UIView {
         sizePicker.value = 10
         self.sizeSlider = sizePicker
         
+        let label = createLabel("Values")
+        valuesLabel = label
+        
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 10
         stack.addArrangedSubview(createHStack(views: createLabel("Color"), colorSegment))
         stack.addArrangedSubview(createHStack(views: createLabel("Shape"), shapeSegment))
         stack.addArrangedSubview(createHStack(views: createLabel("Size"), sizePicker))
+        stack.addArrangedSubview(createHStack(views: label))
         addSubview(stack)
         stack.snp.makeConstraints { (make) in
             make.size.equalToSuperview()
