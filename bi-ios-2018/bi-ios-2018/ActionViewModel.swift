@@ -37,6 +37,7 @@ class ActionViewModel {
     }
     
     func removeShape(shape: ShapeView) {
+        shape.action = {}
         shape.removeFromSuperview()
     }
     

@@ -11,10 +11,12 @@ import UIKit
 
 class ShapeView: UIView {
     
-    var action : () -> () = {
-        print("action")
-    }
+    var action : (() -> ())?
     let hugeArray = Array(0...1000000)
+    
+    deinit {
+        print("")
+    }
     
     
     override init(frame: CGRect) {
@@ -25,7 +27,7 @@ class ShapeView: UIView {
     }
     
     @objc func tapGesture(gesture : UITapGestureRecognizer) {
-        action()
+        action?()
     }
     
     required init?(coder aDecoder: NSCoder) {
