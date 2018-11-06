@@ -78,30 +78,9 @@
                     <view key="view" contentMode="scaleToFill" id="gC2-5h-17G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LfI-Cz-saX">
-                                <rect key="frame" x="110" y="41" width="155" height="29"/>
-                                <segments>
-                                    <segment title="Red"/>
-                                    <segment title="Green"/>
-                                    <segment title="Blue"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.96470588239999999" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="segmentedValueChanged:" destination="ONY-Mj-gCL" eventType="valueChanged" id="2SB-pY-MiI"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="LfI-Cz-saX" firstAttribute="centerX" secondItem="GFf-TZ-Wky" secondAttribute="centerX" id="keY-To-luH"/>
-                            <constraint firstItem="LfI-Cz-saX" firstAttribute="top" secondItem="GFf-TZ-Wky" secondAttribute="top" constant="21" id="peC-LU-1y7"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GFf-TZ-Wky"/>
                     </view>
-                    <connections>
-                        <outlet property="segmentedControl" destination="LfI-Cz-saX" id="zz2-sf-kL5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrM-da-eZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
