@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 import SnapKit
 
+
+
 class ActionViewController : UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var selectedColor : UIColor = .red
     
     weak var controlPanel : ControlPanelView!
+    var viewModel  = ActionViewModel()
 
     override func loadView() {
         super.loadView()
@@ -33,27 +36,24 @@ class ActionViewController : UIViewController {
         
     }
     
+    func setupBindings() {
+        controlPanel.colorSegment.addTarget(viewModel, action: #selector(viewModel.colorForControl(_:)), for: .valueChanged)
+        controlPanel.shapeSegment.addTarget(viewModel, action: #selector(viewModel.shapeForControl(_:)), for: .valueChanged)
+        controlPanel.sizeSlider.addTarget(viewModel, action: #selector(viewModel.sizeForControl(_:)), for: .valueChanged)
+        
+    }
+    
     @objc func placeGestureHandler(recognizer : UITapGestureRecognizer) {
         let location = recognizer.location(in: self.view)
-        let size = controlPanel.sizeSlider.value
-        let rect = UIView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
-        rect.frame.origin = location
-        rect.backgroundColor = .red
-        
+        let rect = viewModel.createShape(position: location)
         view.addSubview(rect)
     
     }
     
-    @IBAction func segmentedValueChanged(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        switch index {
-            case 1: selectedColor = .green
-            case 2: selectedColor = .blue
-            default: selectedColor = .red
-        }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
     }
 }

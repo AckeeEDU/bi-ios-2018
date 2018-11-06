@@ -47,6 +47,7 @@ class ControlPanelView : UIView {
         
     }
     
+    
     func createHStack(views : UIView...) -> UIStackView {
         let stack = UIStackView(arrangedSubviews: views)
         stack.axis = .horizontal

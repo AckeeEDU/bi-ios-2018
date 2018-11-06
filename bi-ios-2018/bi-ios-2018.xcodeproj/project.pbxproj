@@ -18,6 +18,7 @@
 		B4159E032189939300496EC5 /* LeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* LeakView.swift */; };
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
 		B4159E07219221D500496EC5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E06219221D500496EC5 /* Shape.swift */; };
+		B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E082192308100496EC5 /* ActionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		B4159E022189939300496EC5 /* LeakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakView.swift; sourceTree = "<group>"; };
 		B4159E04219217B400496EC5 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		B4159E06219221D500496EC5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		B4159E082192308100496EC5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		CE15544AED2DE0870893EC32 /* Pods-bi-ios-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 				B4159E022189939300496EC5 /* LeakView.swift */,
 				B4159E04219217B400496EC5 /* ControlPanel.swift */,
 				B4159E06219221D500496EC5 /* Shape.swift */,
+				B4159E082192308100496EC5 /* ActionViewModel.swift */,
 			);
 			path = "bi-ios-2018";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
 				B4159E032189939300496EC5 /* LeakView.swift in Sources */,
+				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,
 				B4159E07219221D500496EC5 /* Shape.swift in Sources */,
 				88C9CD9D2176019500BC4D60 /* BubblesViewController.swift in Sources */,
