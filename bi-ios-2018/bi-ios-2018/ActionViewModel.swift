@@ -22,15 +22,22 @@ class ActionViewModel {
     
     var didUpdate : () -> () = {}
     
-    func createShape(position: CGPoint) -> UIView {
+    func createShape(position: CGPoint) -> ShapeView {
         let size = selectedSize
-        let rect = UIView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
+        let rect = ShapeView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
         rect.frame.origin = position
         rect.backgroundColor = selectedColor
         let shape = Shape(tag: shapes.count, color: selectedColor, size: selectedSize, origin: position)
+        
+        
+        
         shapes.append(shape)
         didUpdate()
         return rect
+    }
+    
+    func removeShape(shape: ShapeView) {
+        shape.removeFromSuperview()
     }
     
     @IBAction func colorForControl(_ sender: UISegmentedControl) {

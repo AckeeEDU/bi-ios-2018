@@ -9,19 +9,18 @@
 import Foundation
 import UIKit
 
-class LeakView : UIView {
+class ShapeView: UIView {
     
     var action : () -> () = {
         print("action")
     }
-    let hugeArray = Array(0...100000)
+    let hugeArray = Array(0...1000000)
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let gestureTap = UITapGestureRecognizer(target: self, action: #selector(LeakView.tapGesture(gesture:)))
+        let gestureTap = UITapGestureRecognizer(target: self, action: #selector(ShapeView.tapGesture(gesture:)))
         gestureTap.numberOfTapsRequired = 1
-        
         addGestureRecognizer(gestureTap)
     }
     

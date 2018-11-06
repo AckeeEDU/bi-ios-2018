@@ -15,7 +15,7 @@
 		88C9CDA22176019600BC4D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA12176019600BC4D60 /* Assets.xcassets */; };
 		88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */; };
 		B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E00218985B500496EC5 /* ActionViewController.swift */; };
-		B4159E032189939300496EC5 /* LeakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* LeakView.swift */; };
+		B4159E032189939300496EC5 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* ShapeView.swift */; };
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
 		B4159E07219221D500496EC5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E06219221D500496EC5 /* Shape.swift */; };
 		B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E082192308100496EC5 /* ActionViewModel.swift */; };
@@ -33,7 +33,7 @@
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9247C9B32C1BE299932717B /* Pods-bi-ios-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B4159E00218985B500496EC5 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-		B4159E022189939300496EC5 /* LeakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakView.swift; sourceTree = "<group>"; };
+		B4159E022189939300496EC5 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		B4159E04219217B400496EC5 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		B4159E06219221D500496EC5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B4159E082192308100496EC5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */,
 				88C9CDA62176019600BC4D60 /* Info.plist */,
 				B4159E00218985B500496EC5 /* ActionViewController.swift */,
-				B4159E022189939300496EC5 /* LeakView.swift */,
+				B4159E022189939300496EC5 /* ShapeView.swift */,
 				B4159E04219217B400496EC5 /* ControlPanel.swift */,
 				B4159E06219221D500496EC5 /* Shape.swift */,
 				B4159E082192308100496EC5 /* ActionViewModel.swift */,
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
-				B4159E032189939300496EC5 /* LeakView.swift in Sources */,
+				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
 				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,
 				B4159E07219221D500496EC5 /* Shape.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Shape {
+struct Shape : Equatable {
     enum ShapeType {
         case rectangle
         case circle
