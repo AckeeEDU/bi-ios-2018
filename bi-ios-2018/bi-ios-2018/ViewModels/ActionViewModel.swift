@@ -14,9 +14,10 @@ class ActionViewModel {
     var selectedColor : UIColor = .red
     var selectedSize : Float = 10
     var shapes = [Shape]()
+    var indexCounter = 0
     var overView : String {
         get {
-            return "Size: \(selectedSize) Color: \(selectedColor) Count: \(shapes.count)"
+            return "Size: \(selectedSize) Count: \(shapes.count)"
         }
     }
     
@@ -27,7 +28,10 @@ class ActionViewModel {
         let rect = ShapeView(frame: CGRect(x: 0, y: 0, width: Double(size), height: Double(size)))
         rect.frame.origin = position
         rect.backgroundColor = selectedColor
-        let shape = Shape(tag: shapes.count, color: selectedColor, size: selectedSize, origin: position)
+        rect.tag = indexCounter
+        indexCounter += 1
+        let shape = Shape(tag: rect.tag, color: selectedColor, size: selectedSize, origin: position)
+        
         
         
         
@@ -37,8 +41,13 @@ class ActionViewModel {
     }
     
     func removeShape(shape: ShapeView) {
+        shapes = shapes.filter({ (el) -> Bool in
+            el.tag != shape.tag
+        })
+        
         shape.action = {}
         shape.removeFromSuperview()
+        didUpdate()
     }
     
     @IBAction func colorForControl(_ sender: UISegmentedControl) {

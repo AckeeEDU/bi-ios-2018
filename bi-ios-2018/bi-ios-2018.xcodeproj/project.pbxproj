@@ -73,18 +73,15 @@
 		88C9CD992176019500BC4D60 /* bi-ios-2018 */ = {
 			isa = PBXGroup;
 			children = (
+				B4159E0E2192D21700496EC5 /* ViewModels */,
+				B4159E0C2192D1FA00496EC5 /* ViewControllers */,
+				B4159E0B2192D1E500496EC5 /* Views */,
+				B4159E0A2192D1D700496EC5 /* Model */,
 				88C9CD9A2176019500BC4D60 /* AppDelegate.swift */,
-				88B90883217F6B3A0076A920 /* AutolayoutViewController.swift */,
-				88C9CD9C2176019500BC4D60 /* BubblesViewController.swift */,
 				88C9CD9E2176019500BC4D60 /* Main.storyboard */,
 				88C9CDA12176019600BC4D60 /* Assets.xcassets */,
 				88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */,
 				88C9CDA62176019600BC4D60 /* Info.plist */,
-				B4159E00218985B500496EC5 /* ActionViewController.swift */,
-				B4159E022189939300496EC5 /* ShapeView.swift */,
-				B4159E04219217B400496EC5 /* ControlPanel.swift */,
-				B4159E06219221D500496EC5 /* Shape.swift */,
-				B4159E082192308100496EC5 /* ActionViewModel.swift */,
 			);
 			path = "bi-ios-2018";
 			sourceTree = "<group>";
@@ -104,6 +101,41 @@
 				A9247C9B32C1BE299932717B /* Pods-bi-ios-2018.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B4159E0A2192D1D700496EC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4159E06219221D500496EC5 /* Shape.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4159E0B2192D1E500496EC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4159E022189939300496EC5 /* ShapeView.swift */,
+				B4159E04219217B400496EC5 /* ControlPanel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4159E0C2192D1FA00496EC5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4159E00218985B500496EC5 /* ActionViewController.swift */,
+				88B90883217F6B3A0076A920 /* AutolayoutViewController.swift */,
+				88C9CD9C2176019500BC4D60 /* BubblesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4159E0E2192D21700496EC5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B4159E082192308100496EC5 /* ActionViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
