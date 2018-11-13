@@ -43,6 +43,8 @@ class BubblesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Bubbles viewControler"
+        
         pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), for: .touchUpInside)
         
         print("BubblesViewController did load.")

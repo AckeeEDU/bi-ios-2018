@@ -59,6 +59,8 @@ class AutolayoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "AutolayoutViewController"
+        
         label.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         
         print("AutolayoutViewController did load.")
