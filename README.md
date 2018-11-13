@@ -33,8 +33,8 @@ branch: `04-autolayout`
 - UIStackView
 
 ## 5. Recognizers + controls
-## 6. Controllers (Modal / Navigation / Tab / Alert / split / …)
-## 7. Architektura aplikace (MVC, MVVM)
+## 6. Architektura aplikace (MVC, MVVM)
+## 7. Controllers (Modal / Navigation / Tab / Alert / split / …)
 ## 8. ScrollView + TableView + CollectionView
 ## 9. Networking
 ## 10. MapKit & Location
