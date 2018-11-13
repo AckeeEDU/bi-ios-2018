@@ -11,6 +11,7 @@ import UIKit
 class BubblesViewController: UIViewController {
 
     @IBOutlet weak var fireButton: UIButton!
+    weak var pushButton: UIButton!
     weak var contentView: UIView!
     
     override func loadView() {
@@ -26,11 +27,30 @@ class BubblesViewController: UIViewController {
         view.addSubview(aView)
         
         fireButton.layer.cornerRadius = 10
+        
+        let pushButton = UIButton()
+        pushButton.setTitle("Push autolayout", for: .normal)
+        pushButton.setTitleColor(.white, for: .normal)
+        pushButton.backgroundColor = .black
+        view.addSubview(pushButton)
+        pushButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-10)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+        }
+        self.pushButton = pushButton
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    @objc func pushButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func fireButtonTapped(_ sender: UIButton) {
