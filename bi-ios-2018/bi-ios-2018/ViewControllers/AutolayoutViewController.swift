@@ -60,5 +60,27 @@ class AutolayoutViewController: UIViewController {
         super.viewDidLoad()
 
         label.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        
+        print("AutolayoutViewController did load.")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("AutolayoutViewController will appear.")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("AutolayoutViewController did appear.")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("AutolayoutViewController will disappear.")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("AutolayoutViewController did disappear.")
     }
 }

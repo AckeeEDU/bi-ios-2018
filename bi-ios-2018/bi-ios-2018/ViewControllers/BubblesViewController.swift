@@ -44,6 +44,28 @@ class BubblesViewController: UIViewController {
         super.viewDidLoad()
         
         pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), for: .touchUpInside)
+        
+        print("BubblesViewController did load.")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("BubblesViewController will appear.")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("BubblesViewController did appear.")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("BubblesViewController will disappear.")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("BubblesViewController did disappear.")
     }
     
     @objc func pushButtonTapped(_ sender: UIButton) {
