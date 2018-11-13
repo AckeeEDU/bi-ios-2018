@@ -18,6 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = .red
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bubblesController = storyboard.instantiateViewController(withIdentifier: "BubblesViewController")
+        
+        let bubblesNav = UINavigationController(rootViewController: bubblesController)
+        bubblesNav.tabBarItem.title = "Bubbles"
+        bubblesNav.tabBarItem.image = UIImage(named: "tabbaricon")
+        bubblesNav.tabBarItem.badgeValue = "2"
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        
+        let viewController2 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        let viewController3 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        let viewController4 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        let viewController5 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [bubblesNav, viewController, viewController2, viewController3, viewController4, viewController5]
+        
+        window?.rootViewController = tabBarController
+        
+        window?.makeKeyAndVisible()
         return true
     }
 
