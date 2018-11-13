@@ -12,6 +12,7 @@ class BubblesViewController: UIViewController {
 
     @IBOutlet weak var fireButton: UIButton!
     weak var pushButton: UIButton!
+    weak var presentButton: UIButton!
     weak var contentView: UIView!
     
     override func loadView() {
@@ -38,6 +39,17 @@ class BubblesViewController: UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
         }
         self.pushButton = pushButton
+        
+        let presentButton = UIButton()
+        presentButton.setTitle("Present autolayout", for: .normal)
+        presentButton.setTitleColor(.white, for: .normal)
+        presentButton.backgroundColor = .black
+        view.addSubview(presentButton)
+        presentButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-10)
+            make.top.equalTo(pushButton.snp.bottom).offset(20)
+        }
+        self.presentButton = presentButton
     }
     
     override func viewDidLoad() {
@@ -46,6 +58,7 @@ class BubblesViewController: UIViewController {
         navigationItem.title = "Bubbles viewControler"
         
         pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), for: .touchUpInside)
+        presentButton.addTarget(self, action: #selector(presentButtonTapped(_:)), for: .touchUpInside)
         
         print("BubblesViewController did load.")
     }
@@ -77,6 +90,13 @@ class BubblesViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    @objc func presentButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        
+        present(vc, animated: true)
+    }
+    
     @IBAction func fireButtonTapped(_ sender: UIButton) {
         print("Fire! \(random(min: 0, max: 1))")
         
