@@ -12,6 +12,7 @@ import SnapKit
 class AutolayoutViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
+    weak var dismissButton: UIButton!
     
     override func loadView() {
         super.loadView()
@@ -54,11 +55,52 @@ class AutolayoutViewController: UIViewController {
         mainStack.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
+        
+        let dismissButton = UIButton()
+        dismissButton.setTitle("Close", for: .normal)
+        dismissButton.setTitleColor(.white, for: .normal)
+        dismissButton.backgroundColor = .black
+        view.addSubview(dismissButton)
+        dismissButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-10)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+        }
+        self.dismissButton = dismissButton
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Autolayout"
+        
         label.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped(_:)), for: .touchUpInside)
+        
+        print("AutolayoutViewController did load.")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("AutolayoutViewController will appear.")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("AutolayoutViewController did appear.")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("AutolayoutViewController will disappear.")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("AutolayoutViewController did disappear.")
+    }
+    
+    @objc func dismissButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }
