@@ -34,7 +34,28 @@ branch: `04-autolayout`
 
 ## 5. Recognizers + controls
 ## 6. Architektura aplikace (MVC, MVVM)
+
 ## 7. Controllers (Modal / Navigation / Tab / Alert / split / …)
+branch: `07-view_controllers`
+- `UIViewController` lifecycle
+  - init
+  - loadView
+  - viewDidLoad
+  - willAppear/Disappear, didAppear/Disappear
+  - dealloc
+  - https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/WorkWithViewControllers.html
+- `UINavigationController`
+  - Kontejner zajišťující "stack" navigaci mezi viewControllery 
+  - Princip stacku - push/pop
+  - `UINavigationBar`, `UINavigationItem`, `UIBarButtonItem`
+- `UITabBarController`
+  - Kontejner pro přepínání viewControllerů na stejné úrovni
+  - `UITabBar`, `UITabBarItem`
+- Modální prezentace VC
+  - break aktuálního flow
+  - present/dismiss
+
+
 ## 8. ScrollView + TableView + CollectionView
 ## 9. Networking
 ## 10. MapKit & Location
