@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bubblesNav.tabBarItem.badgeValue = "2"
         
         let scrollViewController = ScrollViewController()
-        scrollViewController.tabBarItem.title = "Scroll"
+        
+        let tableViewController = TableViewController()
+        
         
         let viewController2 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
         let viewController3 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
@@ -40,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.viewControllers = [bubblesNav, scrollViewController, viewController2, viewController3, viewController4, viewController5]
         
 //        window?.rootViewController = tabBarController
-        window?.rootViewController = scrollViewController
+        window?.rootViewController = tableViewController
         
         window?.makeKeyAndVisible()
         return true
