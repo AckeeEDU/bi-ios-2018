@@ -16,6 +16,7 @@
 		88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */; };
 		A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230A921A4765A00592F4A /* ScrollViewController.swift */; };
 		A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AC21A47D3700592F4A /* TableViewController.swift */; };
+		A35230AF21A4819600592F4A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AE21A4819600592F4A /* CustomCell.swift */; };
 		B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E00218985B500496EC5 /* ActionViewController.swift */; };
 		B4159E032189939300496EC5 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* ShapeView.swift */; };
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
@@ -35,6 +36,7 @@
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35230A921A4765A00592F4A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A35230AC21A47D3700592F4A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A35230AE21A4819600592F4A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A9247C9B32C1BE299932717B /* Pods-bi-ios-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B4159E00218985B500496EC5 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B4159E022189939300496EC5 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		B4159E0B2192D1E500496EC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A35230AE21A4819600592F4A /* CustomCell.swift */,
 				B4159E022189939300496EC5 /* ShapeView.swift */,
 				B4159E04219217B400496EC5 /* ControlPanel.swift */,
 			);
@@ -274,6 +277,7 @@
 			files = (
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
 				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
+				A35230AF21A4819600592F4A /* CustomCell.swift in Sources */,
 				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,
@@ -429,15 +433,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PXDF48X6VX;
 				INFOPLIST_FILE = "bi-ios-2018/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cz.cvut.bi-ios-2018";
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ackee.enterprise.bi-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development cz.ackee.enterprise.*";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cz.cvut.bi-ios-2018";
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.ackee.enterprise.bi-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
