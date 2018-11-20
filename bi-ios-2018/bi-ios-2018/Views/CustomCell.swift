@@ -77,5 +77,13 @@ final class CustomCell: UITableViewCell {
         }
         self.messageLabel = messageLabel
     }
+    
+    // MARK: - Reuse
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // e.g. cancel the image request
+    }
 
 }

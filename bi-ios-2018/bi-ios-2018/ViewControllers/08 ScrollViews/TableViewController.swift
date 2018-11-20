@@ -51,8 +51,8 @@ extension TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-        let cell = CustomCell(style: .default, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
+//        let cell = CustomCell(style: .default, reuseIdentifier: nil)
         cell.title = "Cell \(indexPath.row + 1)"
         cell.message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a purus quis nibh euismod rhoncus eu vel mi. Donec ultrices."
         
