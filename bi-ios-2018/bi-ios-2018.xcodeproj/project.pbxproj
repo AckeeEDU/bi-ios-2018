@@ -14,6 +14,7 @@
 		88C9CDA02176019500BC4D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CD9E2176019500BC4D60 /* Main.storyboard */; };
 		88C9CDA22176019600BC4D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA12176019600BC4D60 /* Assets.xcassets */; };
 		88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */; };
+		A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230A921A4765A00592F4A /* ScrollViewController.swift */; };
 		B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E00218985B500496EC5 /* ActionViewController.swift */; };
 		B4159E032189939300496EC5 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* ShapeView.swift */; };
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
@@ -31,6 +32,7 @@
 		88C9CDA42176019600BC4D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C9CDA62176019600BC4D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A35230A921A4765A00592F4A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A9247C9B32C1BE299932717B /* Pods-bi-ios-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B4159E00218985B500496EC5 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B4159E022189939300496EC5 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A35230AB21A47CF400592F4A /* 08 ScrollViews */ = {
+			isa = PBXGroup;
+			children = (
+				A35230A921A4765A00592F4A /* ScrollViewController.swift */,
+			);
+			path = "08 ScrollViews";
+			sourceTree = "<group>";
+		};
 		A8071F80FA08830A59FEC374 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 				B4159E00218985B500496EC5 /* ActionViewController.swift */,
 				88B90883217F6B3A0076A920 /* AutolayoutViewController.swift */,
 				88C9CD9C2176019500BC4D60 /* BubblesViewController.swift */,
+				A35230AB21A47CF400592F4A /* 08 ScrollViews */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +273,7 @@
 				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
 				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,
+				A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */,
 				B4159E07219221D500496EC5 /* Shape.swift in Sources */,
 				88C9CD9D2176019500BC4D60 /* BubblesViewController.swift in Sources */,
 				B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */,
