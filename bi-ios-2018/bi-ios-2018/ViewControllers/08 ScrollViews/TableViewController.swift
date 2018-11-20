@@ -12,6 +12,14 @@ final class TableViewController: UIViewController {
     
     private weak var tableView: UITableView!
     
+    private let data: [User] = [
+        User(name: "Eliška", university: "Matfyz"),
+        User(name: "Lukáš", university: "ČVUT FEL"),
+        User(name: "Honza", university: "ČVUT FIT"),
+        User(name: "Jana", university: "ČZU"),
+        User(name: "Michal", university: nil)
+    ]
+    
     // MARK: - Initialization
     
     init() {
@@ -47,19 +55,21 @@ final class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 10
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let user = data[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
 //        let cell = CustomCell(style: .default, reuseIdentifier: nil)
-        cell.title = "Cell \(indexPath.row + 1)"
-        cell.message = indexPath.row % 2 == 0 ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a purus quis nibh euismod rhoncus eu vel mi. Donec ultrices." : "Lorem ipsum"
+        cell.title = user.name
+        cell.message = user.university
         
         return cell
     }
