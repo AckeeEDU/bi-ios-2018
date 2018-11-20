@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let scrollViewController = ScrollViewController()
         
-        let tableViewController = TableViewController()
+        let tableViewController = CollectionViewController()
         
         
         let viewController2 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")

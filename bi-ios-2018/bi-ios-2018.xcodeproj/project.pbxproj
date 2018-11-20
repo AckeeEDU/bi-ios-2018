@@ -18,6 +18,7 @@
 		A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AC21A47D3700592F4A /* TableViewController.swift */; };
 		A35230AF21A4819600592F4A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AE21A4819600592F4A /* CustomCell.swift */; };
 		A3D3C77421A495AB00BCC83A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C77321A495AB00BCC83A /* User.swift */; };
+		A3D3C77621A4A45F00BCC83A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C77521A4A45F00BCC83A /* CollectionViewController.swift */; };
 		B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E00218985B500496EC5 /* ActionViewController.swift */; };
 		B4159E032189939300496EC5 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E022189939300496EC5 /* ShapeView.swift */; };
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
@@ -39,6 +40,7 @@
 		A35230AC21A47D3700592F4A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A35230AE21A4819600592F4A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A3D3C77321A495AB00BCC83A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A3D3C77521A4A45F00BCC83A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		A9247C9B32C1BE299932717B /* Pods-bi-ios-2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.release.xcconfig"; sourceTree = "<group>"; };
 		B4159E00218985B500496EC5 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		B4159E022189939300496EC5 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				A35230A921A4765A00592F4A /* ScrollViewController.swift */,
 				A35230AC21A47D3700592F4A /* TableViewController.swift */,
+				A3D3C77521A4A45F00BCC83A /* CollectionViewController.swift */,
 			);
 			path = "08 ScrollViews";
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D3C77621A4A45F00BCC83A /* CollectionViewController.swift in Sources */,
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
 				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
 				A35230AF21A4819600592F4A /* CustomCell.swift in Sources */,
