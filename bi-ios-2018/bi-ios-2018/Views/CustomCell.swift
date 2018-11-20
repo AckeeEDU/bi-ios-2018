@@ -48,17 +48,18 @@ final class CustomCell: UITableViewCell {
     private func setup() {
         let avatarImageView = UIImageView()
         avatarImageView.backgroundColor = .gray
-        avatarImageView.layer.cornerRadius = 15
+        avatarImageView.layer.cornerRadius = 25
         avatarImageView.clipsToBounds = true
         contentView.addSubview(avatarImageView)
         avatarImageView.snp.makeConstraints { (make) in
             make.top.leading.equalToSuperview().inset(UIEdgeInsets(top: 5, left: 15, bottom: 0, right: 0))
             make.bottom.lessThanOrEqualToSuperview().inset(5)
-            make.size.equalTo(30)
+            make.size.equalTo(50).priority(999)
         }
         self.avatarImageView = avatarImageView
         
         let titleLabel = UILabel()
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(avatarImageView)
@@ -84,6 +85,28 @@ final class CustomCell: UITableViewCell {
         super.prepareForReuse()
         
         // e.g. cancel the image request
+    }
+    
+    // MARK: - Selection
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        updateSelection(highlighted, animated: animated)
+        
+        print(#function, highlighted, animated)
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        updateSelection(selected, animated: animated)
+        
+        print(#function, selected, animated)
+    }
+    
+    private func updateSelection(_ selected: Bool, animated: Bool) {
+        avatarImageView.backgroundColor = .gray
     }
 
 }

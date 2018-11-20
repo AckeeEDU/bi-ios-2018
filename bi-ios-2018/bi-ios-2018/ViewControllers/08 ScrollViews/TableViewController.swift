@@ -27,7 +27,7 @@ final class TableViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .grouped)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -39,6 +39,7 @@ final class TableViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseIdentifier)
     }
     
@@ -46,17 +47,34 @@ final class TableViewController: UIViewController {
 
 extension TableViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 10
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1000
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
 //        let cell = CustomCell(style: .default, reuseIdentifier: nil)
         cell.title = "Cell \(indexPath.row + 1)"
-        cell.message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a purus quis nibh euismod rhoncus eu vel mi. Donec ultrices."
+        cell.message = indexPath.row % 2 == 0 ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a purus quis nibh euismod rhoncus eu vel mi. Donec ultrices." : "Lorem ipsum"
         
         return cell
+    }
+    
+}
+
+extension TableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section + 1)"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function, indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
