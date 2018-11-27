@@ -28,21 +28,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bubblesNav.tabBarItem.image = UIImage(named: "tabbaricon")
         bubblesNav.tabBarItem.badgeValue = "2"
         
+        let autolayoutVC = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        
+        let actionsVC = storyboard.instantiateViewController(withIdentifier: "ActionViewController")
+        
         let scrollViewController = ScrollViewController()
+        scrollViewController.title = "ScrollView"
         
-        let tableViewController = CollectionViewController()
+        let tableViewController = TableViewController()
+        tableViewController.title = "Table"
         
-        
-        let viewController2 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
-        let viewController3 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
-        let viewController4 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
-        let viewController5 = storyboard.instantiateViewController(withIdentifier: "AutolayoutViewController")
+        let collectionViewController = CollectionViewController()
+        collectionViewController.title = "Collection"
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [bubblesNav, scrollViewController, viewController2, viewController3, viewController4, viewController5]
+        tabBarController.viewControllers = [bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
         
-//        window?.rootViewController = tabBarController
-        window?.rootViewController = tableViewController
+        window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()
         return true
