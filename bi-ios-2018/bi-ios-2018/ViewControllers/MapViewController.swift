@@ -48,10 +48,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let reuseIdentifier = "reuseIdentifier"
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
         
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
         annotationView.image = UIImage(named: "location-pin")
+        
+        annotationView.canShowCallout = true
+        
+        let button = UIButton(type: .detailDisclosure)
+        annotationView.rightCalloutAccessoryView = button
+        
+        annotationView.detailCalloutAccessoryView = UIImageView(image: UIImage(named: "location-pin"))
+        
+        annotationView.isDraggable = true // that's nonsense here of course 😏 - just for example
         
         return annotationView
     }
