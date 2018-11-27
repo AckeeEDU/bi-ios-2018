@@ -80,6 +80,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last! // we are sure we have at least one location there
         print(location)
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+            guard let placemark = placemarks?.last, let street = placemark.thoroughfare, let city = placemark.locality else {
+                self?.navigationItem.title = "Address not found"
+                return
+            }
+            
+            self?.navigationItem.title = "\(city), \(street)"
+        }
     }
     
     let locations = [

@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewController.title = "Collection"
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [mapVC, bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
+        tabBarController.viewControllers = [UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
         
         window?.rootViewController = tabBarController
         
