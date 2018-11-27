@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
@@ -32,6 +32,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+        mapView.delegate = self
+        
         mapView.removeAnnotations(mapView.annotations)
         
         locations.forEach { locationDict in
@@ -41,6 +43,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             annotation.subtitle = "A location subtitle"
             mapView.addAnnotation(annotation)
         }
+    }
+    
+    let reuseIdentifier = "reuseIdentifier"
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        
+        annotationView.image = UIImage(named: "location-pin")
+        
+        return annotationView
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
