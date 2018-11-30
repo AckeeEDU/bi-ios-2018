@@ -12,7 +12,7 @@ final class TableViewController: UIViewController {
     
     private weak var tableView: UITableView!
     
-    private let data: [User] = [
+    private var data: [User] = [
         User(name: "Eliška", university: "Matfyz"),
         User(name: "Lukáš", university: "ČVUT FEL"),
         User(name: "Honza", university: "ČVUT FIT"),
@@ -66,12 +66,25 @@ extension TableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = data[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-//        let cell = CustomCell(style: .default, reuseIdentifier: nil)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as? CustomCell else {
+            return UITableViewCell()
+        }
+        
         cell.title = user.name
         cell.message = user.university
         
         return cell
+        
+        // ---------
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as? CustomCell {
+            cell.title = user.name
+            cell.message = user.university
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
 }
@@ -85,6 +98,19 @@ extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(#function, indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        data.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
 }
