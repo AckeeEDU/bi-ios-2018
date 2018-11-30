@@ -64,6 +64,26 @@ branch: `07-view_controllers`
 
 
 ## 8. ScrollView + TableView + CollectionView
+
+- `UIScrollView`
+    - slouží k zobrazení contentu většího než je velikost viewčka
+    - vložím dovnitř `contentView`, jehož vnitřek musí být správně nalayoutovaný (top -> bottom, left -> right)
+- `UITableView`
+    - rozděleno do sekcí, buňky jsou v jednotlivých sekcích, identifikace buněk pomocí `IndexPath`
+    - data se předávají přes `dataSource: UITableViewDataSource`, akce se odchytávají pomocí `delegate: UITableViewDelegate`
+    - používá se `dequeue` buněk pro optimální výkon
+    - selected a hightlighted stav změní background všech viewček v celle
+    - lze vložit tableHeader, tableFooter, sectionHeader a sectionFooter
+    - při nových datech lze tabulku refreshnout
+        - `tableView.reloadData()`
+        - `tableView.reloadAtIndexPath(:)`
+        - `tableView.reloadSection(:)`
+- `UICollectionView`
+    - buňky nejsou přes celou šířku view, velikost je definovaná pomocí property nebo delegate metody
+    - v rámci layoutu lze udělat naprosto všechno
+    - selected stav na buňce je potřeba si ošetřit samostatně
+    - stejně jako tabulka se používá dequeue
+
 ## 9. Networking
 ## 10. MapKit & Location
 ## 11. CoreData + Realm
