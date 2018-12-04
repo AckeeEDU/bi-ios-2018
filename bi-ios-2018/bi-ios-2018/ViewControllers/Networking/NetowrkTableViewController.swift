@@ -13,6 +13,8 @@ class NetworkTableViewController : UIViewController {
     
     weak var tableView : UITableView!
     var dataManager = DataManager()
+    var data = [Recipe]()
+
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nil);
@@ -48,9 +50,11 @@ class NetworkTableViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        dataManager.getReipes { recipes in
-            print(recipes)
+        dataManager.getReipes { [weak self] recipes in
+            self?.data = recipes
+            self?.tableView.reloadData()
         }
+
     }
     
     
@@ -64,7 +68,7 @@ extension NetworkTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +79,7 @@ extension NetworkTableViewController: UITableViewDataSource {
     }
     
     func configureCell(cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+        cell.textLabel?.text = data[indexPath.row].name
     }
 }
 
