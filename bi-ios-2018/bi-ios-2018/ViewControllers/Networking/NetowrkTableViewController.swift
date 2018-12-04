@@ -48,8 +48,8 @@ class NetworkTableViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        dataManager.getReipes { _ in
-            
+        dataManager.getReipes { recipes in
+            print(recipes)
         }
     }
     
@@ -70,7 +70,7 @@ extension NetworkTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        configureCell(cell: cell, forRowAt: indexPath)        
+        configureCell(cell: cell, forRowAt: indexPath)
         return cell
     }
     

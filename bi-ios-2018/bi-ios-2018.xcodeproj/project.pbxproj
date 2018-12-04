@@ -26,6 +26,7 @@
 		B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E082192308100496EC5 /* ActionViewModel.swift */; };
 		B4F9261A21B6BE2400720683 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261921B6BE2400720683 /* DataManager.swift */; };
 		B4F9261D21B6BF2F00720683 /* NetowrkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261C21B6BF2F00720683 /* NetowrkTableViewController.swift */; };
+		B4F9261F21B6C7DD00720683 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261E21B6C7DD00720683 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B4159E082192308100496EC5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		B4F9261921B6BE2400720683 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B4F9261C21B6BF2F00720683 /* NetowrkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetowrkTableViewController.swift; sourceTree = "<group>"; };
+		B4F9261E21B6C7DD00720683 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		CE15544AED2DE0870893EC32 /* Pods-bi-ios-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			children = (
 				B4159E06219221D500496EC5 /* Shape.swift */,
 				A3D3C77321A495AB00BCC83A /* User.swift */,
+				B4F9261E21B6C7DD00720683 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				88C9CD9D2176019500BC4D60 /* BubblesViewController.swift in Sources */,
 				B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */,
 				88C9CD9B2176019500BC4D60 /* AppDelegate.swift in Sources */,
+				B4F9261F21B6C7DD00720683 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

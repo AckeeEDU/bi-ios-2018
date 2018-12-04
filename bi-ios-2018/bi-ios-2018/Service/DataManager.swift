@@ -11,13 +11,14 @@ import Alamofire
 
 class DataManager {
     
-    func getReipes( callback: ((Any) -> ())?)  {
+    func getReipes( callback: (([Recipe]) -> ())?)  {
         Alamofire.request("https://cookbook.ack.ee/api/v1/recipes").responseJSON { response in
             if let data = response.data {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let recipes = try jsonDecoder.decode([Recipe].self, from: data)
-                    print(recipes)
+                    callback?(recipes)
+                    
                 } catch {}
             }
 
