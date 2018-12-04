@@ -50,8 +50,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         
         window?.makeKeyAndVisible()
+        
+        helloAsyncWorld { (number) in
+            print(number)
+        }
+        
+        let method : (Int) -> () = { number in
+            print(1)
+        }
+        
+        helloAsyncWorld(callback: method)
+        
+        helloAsyncWorld(callback: myCallback)
+        
         return true
+        
     }
+    
+    func myCallback(number: Int) {
+        print(number)
+    }
+    
+    func helloAsyncWorld(callback: (Int) -> ()) {
+        callback(1)
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
