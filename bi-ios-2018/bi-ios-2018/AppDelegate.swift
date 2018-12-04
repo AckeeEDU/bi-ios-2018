@@ -41,8 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let collectionViewController = CollectionViewController()
         collectionViewController.title = "Collection"
         
+        let networkTable = NetworkTableViewController()
+        networkTable.title = "Network Table"
+        
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
+        tabBarController.viewControllers = [bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController, networkTable]
         
         window?.rootViewController = tabBarController
         
