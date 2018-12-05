@@ -14,4 +14,5 @@ struct Recipe : Codable {
     var duration : Int
     var id : String
     var score : Int
+    var rating: Int?
 }

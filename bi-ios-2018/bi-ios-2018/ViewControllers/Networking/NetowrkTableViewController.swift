@@ -32,7 +32,7 @@ class NetworkTableViewController : UIViewController {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        table.register(RecipeTableCell.self, forCellReuseIdentifier: "Cell")
         table.tableFooterView = UIView()
         view.addSubview(table)
         
@@ -72,15 +72,13 @@ extension NetworkTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RecipeTableCell
+        cell.recipe = data[indexPath.row]
         
-        configureCell(cell: cell, forRowAt: indexPath)
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = data[indexPath.row].name
-    }
+    
 }
 
 //MARK: UITableView delegate

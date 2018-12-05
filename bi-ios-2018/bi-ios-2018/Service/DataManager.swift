@@ -11,19 +11,25 @@ import Alamofire
 
 class DataManager {
     
-    func getReipes( callback: (([Recipe]) -> ())?)  {
+    func getReipes( callback: @escaping (([Recipe]) -> ()))  {
         Alamofire.request("https://cookbook.ack.ee/api/v1/recipes").responseJSON { response in
             if let data = response.data {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let recipes = try jsonDecoder.decode([Recipe].self, from: data)
-                    callback?(recipes)
+                    callback(recipes)
                     
                 } catch {}
             }
 
         }
     }
+    
+    func getRecipe(id: String, callback: (Recipe) -> ()) {
+        Alamofire.request("https://cookbook.ack.ee/api/v1/recipes/\(id)").responseJSON { response in
+        }
+    }
+
     
 }
 
