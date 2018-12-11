@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mapVC = MapViewController()
+        mapVC.title = "Map"
+        
         let bubblesController = storyboard.instantiateViewController(withIdentifier: "BubblesViewController")
         
         let bubblesNav = UINavigationController(rootViewController: bubblesController)
@@ -42,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewController.title = "Collection"
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
+        tabBarController.viewControllers = [UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
         
         window?.rootViewController = tabBarController
         
