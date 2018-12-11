@@ -10,6 +10,8 @@ import UIKit
 
 class CanvasView: UIView {
 
+    public weak var drawingRecognizer: UIPanGestureRecognizer!
+    
     var paths: [DrawingPath] = []
     
     var currentPath: DrawingPath?
@@ -20,7 +22,9 @@ class CanvasView: UIView {
         backgroundColor = .white
         
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panChanged(_:)))
+        gestureRecognizer.maximumNumberOfTouches = 1
         addGestureRecognizer(gestureRecognizer)
+        drawingRecognizer = gestureRecognizer
     }
     
     required init?(coder aDecoder: NSCoder) {
