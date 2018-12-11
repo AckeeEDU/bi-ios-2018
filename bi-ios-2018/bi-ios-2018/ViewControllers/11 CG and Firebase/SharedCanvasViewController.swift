@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class SharedCanvasViewController: UIViewController {
+class SharedCanvasViewController: UIViewController, CanvasViewDelegate {
 
     weak var scrollView: UIScrollView!
     weak var canvasView: CanvasView!
+    
+    private var databaseReference: DatabaseReference!
     
     override func loadView() {
         super.loadView()
@@ -36,9 +39,17 @@ class SharedCanvasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        databaseReference = Database.database().reference().child("canvas")
+        
         scrollView.panGestureRecognizer.minimumNumberOfTouches = 2
         scrollView.panGestureRecognizer.require(toFail: canvasView.drawingRecognizer)
         // stačí jeden ze dvou těchto řádků, oba řeší kolizi dvou recognizerů jen různým způsobem
     }
 
+    func canvasView(_ canvasView: CanvasView, didDrawPath path: DrawingPath) {
+        
+        //        let newPath = databaseReference.childByAutoId()
+        //        newPath.setValue(...)
+        
+    }
 }
