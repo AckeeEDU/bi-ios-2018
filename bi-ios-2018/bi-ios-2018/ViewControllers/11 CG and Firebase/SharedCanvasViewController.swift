@@ -55,6 +55,10 @@ class SharedCanvasViewController: UIViewController, CanvasViewDelegate {
                 self?.canvasView.add(path: path)
             }
         }
+        
+        databaseReference.observe(.childRemoved) { [weak self] snapshot in
+            self?.canvasView.remove(pathKey: snapshot.key)
+        }
     }
 
     func canvasView(_ canvasView: CanvasView, didDrawPath path: DrawingPath) {

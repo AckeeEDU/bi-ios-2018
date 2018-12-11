@@ -89,7 +89,19 @@ class CanvasView: UIView {
     }
     
     func add(path: DrawingPath) {
+        // čára, kterou jsme nakreslili, odešleme na firebase a v zápětí se vrátí v observe bloku -> měli bychom ji v poli 2x!
+        if paths.contains(where: { $0.key == path.key }) {
+            return
+        }
+        
         paths.append(path)
+        setNeedsDisplay()
+    }
+    
+    func remove(pathKey: String) {
+        if let index = paths.index(where: { $0.key == pathKey }) {
+            paths.remove(at: index)
+        }
         setNeedsDisplay()
     }
 }
