@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - CodableFirebase (0.2.1)
   - FirebaseCore (5.1.7):
     - GoogleUtilities/Logger (~> 5.2)
   - FirebaseDatabase (5.0.3):
@@ -13,12 +14,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CodableFirebase (~> 0.2)
   - FirebaseDatabase (~> 5.0)
   - SnapKit (~> 4.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CodableFirebase
     - FirebaseCore
     - FirebaseDatabase
     - GoogleUtilities
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   FirebaseCore: 027d350adc039aa5483357c6f56556f117c5170e
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
   GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 8964c4e97688527161a1123de65187c2fe02fa98
+PODFILE CHECKSUM: 0916f0da06be43b0f70ad6a39a02398294d8a633
 
 COCOAPODS: 1.5.3

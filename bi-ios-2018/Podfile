@@ -10,4 +10,5 @@ target 'bi-ios-2018' do
   pod 'Alamofire'
 
   pod 'FirebaseDatabase', '~> 5.0'
+  pod 'CodableFirebase', '~> 0.2' # https://medium.com/@alickdikan/easy-custom-models-and-firebase-in-swift-4-with-codable-43bdb7805b31
 end
