@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>335888089093-7685u6sl144ou6i34e5ou830irapahf4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335888089093-7685u6sl144ou6i34e5ou830irapahf4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDKRaRB2KWfK2xzhrSP0xxmaQV8aKhBHFE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335888089093</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>cz.cvut.fit.BI-IOS</string>
+	<key>PROJECT_ID</key>
+	<string>bi-ios-drawing</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bi-ios-drawing.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335888089093:ios:3f425f76dcef4dc5</string>
+	<key>DATABASE_URL</key>
+	<string>https://bi-ios-drawing.firebaseio.com</string>
+</dict>
+</plist>

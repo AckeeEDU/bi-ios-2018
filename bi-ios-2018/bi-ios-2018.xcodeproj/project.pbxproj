@@ -18,6 +18,7 @@
 		88F165C221C047850039AB70 /* SharedCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C121C047850039AB70 /* SharedCanvasViewController.swift */; };
 		88F165C421C0480F0039AB70 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C321C0480F0039AB70 /* CanvasView.swift */; };
 		88F165C621C04D480039AB70 /* DrawingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C521C04D480039AB70 /* DrawingPath.swift */; };
+		88F165C821C051350039AB70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88F165C721C051350039AB70 /* GoogleService-Info.plist */; };
 		A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230A921A4765A00592F4A /* ScrollViewController.swift */; };
 		A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AC21A47D3700592F4A /* TableViewController.swift */; };
 		A35230AF21A4819600592F4A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AE21A4819600592F4A /* CustomCell.swift */; };
@@ -47,6 +48,7 @@
 		88F165C121C047850039AB70 /* SharedCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCanvasViewController.swift; sourceTree = "<group>"; };
 		88F165C321C0480F0039AB70 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		88F165C521C04D480039AB70 /* DrawingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPath.swift; sourceTree = "<group>"; };
+		88F165C721C051350039AB70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35230A921A4765A00592F4A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A35230AC21A47D3700592F4A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				88C9CDA12176019600BC4D60 /* Assets.xcassets */,
 				88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */,
 				88C9CDA62176019600BC4D60 /* Info.plist */,
+				88F165C721C051350039AB70 /* GoogleService-Info.plist */,
 			);
 			path = "bi-ios-2018";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */,
+				88F165C821C051350039AB70 /* GoogleService-Info.plist in Resources */,
 				88C9CDA22176019600BC4D60 /* Assets.xcassets in Resources */,
 				88C9CDA02176019500BC4D60 /* Main.storyboard in Resources */,
 			);
