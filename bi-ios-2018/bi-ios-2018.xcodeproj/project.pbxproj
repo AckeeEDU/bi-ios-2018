@@ -25,6 +25,10 @@
 		B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E04219217B400496EC5 /* ControlPanel.swift */; };
 		B4159E07219221D500496EC5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E06219221D500496EC5 /* Shape.swift */; };
 		B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4159E082192308100496EC5 /* ActionViewModel.swift */; };
+		B4F9261A21B6BE2400720683 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261921B6BE2400720683 /* DataManager.swift */; };
+		B4F9261D21B6BF2F00720683 /* NetowrkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261C21B6BF2F00720683 /* NetowrkTableViewController.swift */; };
+		B4F9261F21B6C7DD00720683 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9261E21B6C7DD00720683 /* Recipe.swift */; };
+		B4F9262121B6CC7B00720683 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F9262021B6CC7B00720683 /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		B4159E04219217B400496EC5 /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		B4159E06219221D500496EC5 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		B4159E082192308100496EC5 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
+		B4F9261921B6BE2400720683 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		B4F9261C21B6BF2F00720683 /* NetowrkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetowrkTableViewController.swift; sourceTree = "<group>"; };
+		B4F9261E21B6C7DD00720683 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		B4F9262021B6CC7B00720683 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		CE15544AED2DE0870893EC32 /* Pods-bi-ios-2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bi-ios-2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,7 @@
 		88C9CD992176019500BC4D60 /* bi-ios-2018 */ = {
 			isa = PBXGroup;
 			children = (
+				B4F9261821B6BE1200720683 /* Service */,
 				B4159E0E2192D21700496EC5 /* ViewModels */,
 				B4159E0C2192D1FA00496EC5 /* ViewControllers */,
 				B4159E0B2192D1E500496EC5 /* Views */,
@@ -130,6 +139,7 @@
 			children = (
 				B4159E06219221D500496EC5 /* Shape.swift */,
 				A3D3C77321A495AB00BCC83A /* User.swift */,
+				B4F9261E21B6C7DD00720683 /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 				A35230AE21A4819600592F4A /* CustomCell.swift */,
 				B4159E022189939300496EC5 /* ShapeView.swift */,
 				B4159E04219217B400496EC5 /* ControlPanel.swift */,
+				B4F9262021B6CC7B00720683 /* RecipeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +158,7 @@
 		B4159E0C2192D1FA00496EC5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4F9261B21B6BF1700720683 /* Networking */,
 				B4159E00218985B500496EC5 /* ActionViewController.swift */,
 				88B90883217F6B3A0076A920 /* AutolayoutViewController.swift */,
 				88C9CD9C2176019500BC4D60 /* BubblesViewController.swift */,
@@ -162,6 +174,22 @@
 				B4159E082192308100496EC5 /* ActionViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B4F9261821B6BE1200720683 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B4F9261921B6BE2400720683 /* DataManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B4F9261B21B6BF1700720683 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B4F9261C21B6BF2F00720683 /* NetowrkTableViewController.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,12 +292,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-bi-ios-2018/Pods-bi-ios-2018-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +317,10 @@
 				A3D3C77621A4A45F00BCC83A /* CollectionViewController.swift in Sources */,
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
 				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
+				B4F9261A21B6BE2400720683 /* DataManager.swift in Sources */,
+				B4F9262121B6CC7B00720683 /* RecipeCell.swift in Sources */,
 				A35230AF21A4819600592F4A /* CustomCell.swift in Sources */,
+				B4F9261D21B6BF2F00720683 /* NetowrkTableViewController.swift in Sources */,
 				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,
@@ -298,6 +331,7 @@
 				B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */,
 				88C9CD9B2176019500BC4D60 /* AppDelegate.swift in Sources */,
 				885E281621ADBDE300B2905A /* MapViewController.swift in Sources */,
+				B4F9261F21B6C7DD00720683 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

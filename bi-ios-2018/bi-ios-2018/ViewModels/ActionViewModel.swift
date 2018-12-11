@@ -45,7 +45,7 @@ class ActionViewModel {
             el.tag != shape.tag
         })
         
-        shape.action = {}
+        //shape.action = {}
         shape.removeFromSuperview()
         didUpdate()
     }

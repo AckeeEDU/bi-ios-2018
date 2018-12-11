@@ -11,7 +11,9 @@ import UIKit
 
 class ShapeView: UIView {
     
-    var action : (() -> ())?
+    var action : (() -> ())? = { 
+        
+    }
     let hugeArray = Array(0...1000000)
     
     deinit {
