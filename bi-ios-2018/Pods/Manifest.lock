@@ -1,20 +1,38 @@
 PODS:
   - Alamofire (4.7.3)
+  - FirebaseCore (5.1.7):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.3):
+    - FirebaseCore (~> 5.0)
+    - leveldb-library (~> 1.18)
+  - GoogleUtilities/Environment (5.3.4)
+  - GoogleUtilities/Logger (5.3.4):
+    - GoogleUtilities/Environment
+  - leveldb-library (1.20)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - FirebaseDatabase (~> 5.0)
   - SnapKit (~> 4.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FirebaseCore
+    - FirebaseDatabase
+    - GoogleUtilities
+    - leveldb-library
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  FirebaseCore: 027d350adc039aa5483357c6f56556f117c5170e
+  FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
+  GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: a63684d53b809af6980df2ff2886fa78e08f57a1
+PODFILE CHECKSUM: 8964c4e97688527161a1123de65187c2fe02fa98
 
 COCOAPODS: 1.5.3
