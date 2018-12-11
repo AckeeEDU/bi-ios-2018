@@ -15,6 +15,8 @@
 		88C9CDA02176019500BC4D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CD9E2176019500BC4D60 /* Main.storyboard */; };
 		88C9CDA22176019600BC4D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA12176019600BC4D60 /* Assets.xcassets */; };
 		88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */; };
+		88F165C221C047850039AB70 /* SharedCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C121C047850039AB70 /* SharedCanvasViewController.swift */; };
+		88F165C421C0480F0039AB70 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C321C0480F0039AB70 /* CanvasView.swift */; };
 		A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230A921A4765A00592F4A /* ScrollViewController.swift */; };
 		A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AC21A47D3700592F4A /* TableViewController.swift */; };
 		A35230AF21A4819600592F4A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AE21A4819600592F4A /* CustomCell.swift */; };
@@ -41,6 +43,8 @@
 		88C9CDA12176019600BC4D60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C9CDA42176019600BC4D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C9CDA62176019600BC4D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F165C121C047850039AB70 /* SharedCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCanvasViewController.swift; sourceTree = "<group>"; };
+		88F165C321C0480F0039AB70 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35230A921A4765A00592F4A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A35230AC21A47D3700592F4A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			path = "bi-ios-2018";
 			sourceTree = "<group>";
 		};
+		88F165C021C047590039AB70 /* 11 CG and Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				88F165C321C0480F0039AB70 /* CanvasView.swift */,
+				88F165C121C047850039AB70 /* SharedCanvasViewController.swift */,
+			);
+			path = "11 CG and Firebase";
+			sourceTree = "<group>";
+		};
 		8F41FC83DA784503F80B3E97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 				88C9CD9C2176019500BC4D60 /* BubblesViewController.swift */,
 				A35230AB21A47CF400592F4A /* 08 ScrollViews */,
 				885E281521ADBDE300B2905A /* MapViewController.swift */,
+				88F165C021C047590039AB70 /* 11 CG and Firebase */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -316,11 +330,13 @@
 			files = (
 				A3D3C77621A4A45F00BCC83A /* CollectionViewController.swift in Sources */,
 				B4159E05219217B400496EC5 /* ControlPanel.swift in Sources */,
+				88F165C421C0480F0039AB70 /* CanvasView.swift in Sources */,
 				B4159E032189939300496EC5 /* ShapeView.swift in Sources */,
 				B4F9261A21B6BE2400720683 /* DataManager.swift in Sources */,
 				B4F9262121B6CC7B00720683 /* RecipeCell.swift in Sources */,
 				A35230AF21A4819600592F4A /* CustomCell.swift in Sources */,
 				B4F9261D21B6BF2F00720683 /* NetowrkTableViewController.swift in Sources */,
+				88F165C221C047850039AB70 /* SharedCanvasViewController.swift in Sources */,
 				B4159E092192308100496EC5 /* ActionViewModel.swift in Sources */,
 				A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */,
 				88B90884217F6B3A0076A920 /* AutolayoutViewController.swift in Sources */,

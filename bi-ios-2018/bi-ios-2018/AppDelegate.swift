@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let sharedCanvasVC = SharedCanvasViewController()
+        sharedCanvasVC.title = "Canvas"
+        
         let mapVC = MapViewController()
         mapVC.title = "Map"
         
@@ -50,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = UITabBarController()
 
-        tabBarController.viewControllers = [networkTable, UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
+        tabBarController.viewControllers = [sharedCanvasVC, networkTable, UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
         
         window?.rootViewController = tabBarController
         
