@@ -10,7 +10,9 @@ import UIKit
 
 class CanvasView: UIView {
 
-    var points: [CGPoint] = []
+    var paths: [DrawingPath] = []
+    
+    var currentPath: DrawingPath?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,15 +28,22 @@ class CanvasView: UIView {
     }
     
     @objc func panChanged(_ gestureRecognizer: UIPanGestureRecognizer) {
+        
+        let point = gestureRecognizer.location(in: self)
+        
         switch gestureRecognizer.state {
         case .began:
+            let path = DrawingPath()
+            path.points.append(point)
+            
+            paths.append(path)
+            currentPath = path
             break
         case .changed:
-            let point = gestureRecognizer.location(in: self)
-            points.append(point)
+            currentPath?.points.append(point)
             break
         case .cancelled, .ended, .failed:
-            break
+            currentPath = nil
         default:
             break
         }
@@ -49,18 +58,21 @@ class CanvasView: UIView {
         
         guard let context = UIGraphicsGetCurrentContext() else { return }
         
-        context.setLineWidth(2)
-        context.setStrokeColor(UIColor.black.cgColor)
+        paths.forEach { path in
+            CanvasView.draw(path: path, in: context)
+        }
+    }
+    
+    static func draw(path: DrawingPath, in context: CGContext) {
+        
+        context.setLineWidth(path.lineWidth)
+        context.setStrokeColor(path.color.cgColor)
         
         context.beginPath()
         
-        if let firstPoint = points.first {
-            context.move(to: firstPoint)
-        }
-        context.addLines(between: points)
+        context.move(to: path.points.first!) // víme jistě, že tam první máme
+        context.addLines(between: path.points)
         
         context.drawPath(using: .stroke)
     }
-    
-
 }

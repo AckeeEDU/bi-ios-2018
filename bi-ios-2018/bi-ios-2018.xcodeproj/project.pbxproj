@@ -17,6 +17,7 @@
 		88C9CDA52176019600BC4D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C9CDA32176019600BC4D60 /* LaunchScreen.storyboard */; };
 		88F165C221C047850039AB70 /* SharedCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C121C047850039AB70 /* SharedCanvasViewController.swift */; };
 		88F165C421C0480F0039AB70 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C321C0480F0039AB70 /* CanvasView.swift */; };
+		88F165C621C04D480039AB70 /* DrawingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F165C521C04D480039AB70 /* DrawingPath.swift */; };
 		A35230AA21A4765A00592F4A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230A921A4765A00592F4A /* ScrollViewController.swift */; };
 		A35230AD21A47D3700592F4A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AC21A47D3700592F4A /* TableViewController.swift */; };
 		A35230AF21A4819600592F4A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35230AE21A4819600592F4A /* CustomCell.swift */; };
@@ -45,6 +46,7 @@
 		88C9CDA62176019600BC4D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88F165C121C047850039AB70 /* SharedCanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedCanvasViewController.swift; sourceTree = "<group>"; };
 		88F165C321C0480F0039AB70 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		88F165C521C04D480039AB70 /* DrawingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPath.swift; sourceTree = "<group>"; };
 		9A9AF8E54DD0054D3D8D5303 /* Pods_bi_ios_2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bi_ios_2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35230A921A4765A00592F4A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A35230AC21A47D3700592F4A /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				88F165C321C0480F0039AB70 /* CanvasView.swift */,
+				88F165C521C04D480039AB70 /* DrawingPath.swift */,
 				88F165C121C047850039AB70 /* SharedCanvasViewController.swift */,
 			);
 			path = "11 CG and Firebase";
@@ -346,6 +349,7 @@
 				88C9CD9D2176019500BC4D60 /* BubblesViewController.swift in Sources */,
 				B4159E01218985B500496EC5 /* ActionViewController.swift in Sources */,
 				88C9CD9B2176019500BC4D60 /* AppDelegate.swift in Sources */,
+				88F165C621C04D480039AB70 /* DrawingPath.swift in Sources */,
 				885E281621ADBDE300B2905A /* MapViewController.swift in Sources */,
 				B4F9261F21B6C7DD00720683 /* Recipe.swift in Sources */,
 			);
