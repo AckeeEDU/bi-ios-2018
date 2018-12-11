@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import CodableFirebase
 
 class SharedCanvasViewController: UIViewController, CanvasViewDelegate {
 
@@ -41,15 +42,26 @@ class SharedCanvasViewController: UIViewController, CanvasViewDelegate {
         
         databaseReference = Database.database().reference().child("canvas")
         
+        canvasView.delegate = self
+        
         scrollView.panGestureRecognizer.minimumNumberOfTouches = 2
         scrollView.panGestureRecognizer.require(toFail: canvasView.drawingRecognizer)
         // stačí jeden ze dvou těchto řádků, oba řeší kolizi dvou recognizerů jen různým způsobem
+        
+        databaseReference.observe(.childAdded) { [weak self] snapshot in
+            guard let value = snapshot.value else { return }
+            
+            if let path = try? FirebaseDecoder().decode(DrawingPath.self, from: value) {
+                self?.canvasView.add(path: path)
+            }
+        }
     }
 
     func canvasView(_ canvasView: CanvasView, didDrawPath path: DrawingPath) {
         
-        //        let newPath = databaseReference.childByAutoId()
-        //        newPath.setValue(...)
-        
+        let newPath = databaseReference.childByAutoId()
+        path.key = newPath.key
+        let data = try! FirebaseEncoder().encode(path)
+        newPath.setValue(data) // completion, failure... chtělo by to ošetřit 🤔
     }
 }

@@ -78,7 +78,7 @@ class CanvasView: UIView {
     static func draw(path: DrawingPath, in context: CGContext) {
         
         context.setLineWidth(path.lineWidth)
-        context.setStrokeColor(path.color.cgColor)
+        context.setStrokeColor(UIColor.black.cgColor)
         
         context.beginPath()
         
@@ -86,5 +86,10 @@ class CanvasView: UIView {
         context.addLines(between: path.points)
         
         context.drawPath(using: .stroke)
+    }
+    
+    func add(path: DrawingPath) {
+        paths.append(path)
+        setNeedsDisplay()
     }
 }

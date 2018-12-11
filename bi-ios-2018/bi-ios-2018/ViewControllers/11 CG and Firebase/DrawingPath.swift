@@ -8,10 +8,10 @@
 
 import UIKit
 
-class DrawingPath {
+class DrawingPath: Codable {
     
+    var key: String?
     var points: [CGPoint] = []
-    var color: UIColor = .black
     var lineWidth: CGFloat = 2
     
 }
