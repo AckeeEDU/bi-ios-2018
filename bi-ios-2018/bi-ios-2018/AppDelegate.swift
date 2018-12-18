@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .red
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
+        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let sharedCanvasVC = SharedCanvasViewController()
@@ -53,12 +53,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let networkTable = NetworkTableViewController()
         networkTable.title = "Network Table"
+        */
+        let coreDataVC = UINavigationController(rootViewController: CoreDataViewController())
         
-        let tabBarController = UITabBarController()
+//        let tabBarController = UITabBarController()
 
-        tabBarController.viewControllers = [sharedCanvasVC, networkTable, UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
+//        tabBarController.viewControllers = [coreDataVC, sharedCanvasVC, networkTable, UINavigationController(rootViewController: mapVC), bubblesNav, autolayoutVC, actionsVC, scrollViewController, tableViewController, collectionViewController]
         
-        window?.rootViewController = tabBarController
+//        window?.rootViewController = tabBarController
+        window?.rootViewController = coreDataVC
         
         window?.makeKeyAndVisible()
         
