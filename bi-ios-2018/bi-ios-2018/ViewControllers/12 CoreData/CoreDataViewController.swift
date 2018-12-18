@@ -120,6 +120,33 @@ extension CoreDataViewController: UITableViewDelegate {
         return resultsController.sections?[section].name
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "Zakoupený dárek", message: "Opravdu mám přidat dárek na seznam zakoupených?", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            guard let giftName = self?.resultsController.object(at: indexPath).name else { return }
+            DB.shared.performBackgroundTask { context in
+                
+                let request: NSFetchRequest<Gift> = Gift.fetchRequest()
+                request.predicate = NSPredicate(format: "name = %@", giftName)
+                request.fetchLimit = 1
+                
+                do {
+                    let result = try context.fetch(request)
+                    result.first?.type = "Zakoupeno"
+                    try context.saveIfNeeded()
+                } catch {
+                    print("[ERROR]", error.localizedDescription)
+                }
+            }
+        }
+        alertController.addAction(okAction)
+        
+        alertController.addAction(UIAlertAction(title: "Zrušit", style: .cancel))
+        
+        present(alertController, animated: true)
+    }
+    
 }
 
 extension CoreDataViewController: NSFetchedResultsControllerDelegate {
