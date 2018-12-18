@@ -39,6 +39,8 @@ final class CoreDataViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        insertUsersIfNeeded()
+        
         setupFetchedResultsController()
         try? resultsController.performFetch()
     }
@@ -52,11 +54,26 @@ final class CoreDataViewController: UIViewController {
             textField.placeholder = "Název dárku"
         }
         
+        alertController.addTextField { textField in
+            textField.placeholder = "Komu"
+        }
+        
         let addAction = UIAlertAction(title: "Přidat", style: .default) { _ in
-            guard let name = alertController.textFields?.first?.text else { return }
+            guard
+                let name = alertController.textFields?.first?.text,
+                let userName = alertController.textFields?[1].text
+            else { return }
             DB.shared.performBackgroundTask { context in
+                let request: NSFetchRequest<Person> = Person.fetchRequest()
+                request.predicate = NSPredicate(format: "name = %@", userName)
+                request.fetchLimit = 1
+                let result = try! context.fetch(request)
+                
+                guard let user = result.first else { assertionFailure(); return }
+                
                 let gift = Gift(context: context)
                 gift.name = name
+                gift.user = user
                 do {
                     try context.saveIfNeeded()
                 } catch {
@@ -77,18 +94,35 @@ final class CoreDataViewController: UIViewController {
         let request: NSFetchRequest<Gift> = Gift.fetchRequest()
         
         request.sortDescriptors = [
-            NSSortDescriptor(key: "type", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:))),
+            NSSortDescriptor(key: "user.name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:))),
             NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         ]
         
         let resultsController = NSFetchedResultsController(
             fetchRequest: request,
             managedObjectContext: DB.shared.mainContext,
-            sectionNameKeyPath: "type",
+            sectionNameKeyPath: "user.name",
             cacheName: nil
         )
         resultsController.delegate = self
         self.resultsController = resultsController
+    }
+    
+    private func insertUsersIfNeeded() {
+        let key = "users_inserted"
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        
+        DB.shared.performBackgroundTask { context in
+            let names = ["Jana", "Pavel", "Anna", "Lukáš", "Petra", "Petr"]
+            var users: [Person] = []
+            for name in names {
+                let user = Person(context: context)
+                user.name = name
+                users.append(user)
+            }
+            try! context.save()
+            UserDefaults.standard.setValue(true, forKey: key)
+        }
     }
     
 }
@@ -106,8 +140,10 @@ extension CoreDataViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let gift = resultsController.object(at: indexPath)
         
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "subtitle")
         cell.textLabel?.text = gift.name
+        cell.detailTextLabel?.text = gift.user?.name
+        cell.accessoryType = gift.type == "Zakoupeno" ? .checkmark : .none
         
         return cell
     }
@@ -134,7 +170,7 @@ extension CoreDataViewController: UITableViewDelegate {
                 do {
                     let result = try context.fetch(request)
                     result.first?.type = "Zakoupeno"
-                    try context.saveIfNeeded()
+                    try context.save()
                 } catch {
                     print("[ERROR]", error.localizedDescription)
                 }

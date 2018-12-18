@@ -3,8 +3,14 @@
     <entity name="Gift" representedClassName="Gift" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" defaultValueString="Nekoupeno" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="gifts" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gifts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Gift" inverseName="user" inverseEntity="Gift" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Gift" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Gift" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Person" positionX="359.2421875" positionY="-75.91796875" width="128" height="75"/>
     </elements>
 </model>
