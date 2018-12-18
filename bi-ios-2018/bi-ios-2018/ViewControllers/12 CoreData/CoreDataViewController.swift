@@ -37,6 +37,7 @@ final class CoreDataViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItem(_:)))
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         setupFetchedResultsController()
         try? resultsController.performFetch()
@@ -46,16 +47,28 @@ final class CoreDataViewController: UIViewController {
     
     @objc
     private func addBarButtonItem(_ sender: UIBarButtonItem) {
-        
-        DB.shared.performBackgroundTask { context in
-            var gifts: [Gift] = []
-            for i in 0...100 {
-                let gift = Gift(context: context)
-                gift.name = "Gift \(i)"
-                gifts.append(gift)
-            }
-            try! context.save()
+        let alertController = UIAlertController(title: "Nový dárek", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = "Název dárku"
         }
+        
+        let addAction = UIAlertAction(title: "Přidat", style: .default) { _ in
+            guard let name = alertController.textFields?.first?.text else { return }
+            DB.shared.performBackgroundTask { context in
+                let gift = Gift(context: context)
+                gift.name = name
+                do {
+                    try context.saveIfNeeded()
+                } catch {
+                    print("[ERROR]", error.localizedDescription)
+                }
+            }
+        }
+        alertController.addAction(addAction)
+        
+        alertController.addAction(UIAlertAction(title: "Zrušit", style: .cancel))
+        
+        present(alertController, animated: true)
     }
     
     // MARK: - Helpers
@@ -64,13 +77,14 @@ final class CoreDataViewController: UIViewController {
         let request: NSFetchRequest<Gift> = Gift.fetchRequest()
         
         request.sortDescriptors = [
+            NSSortDescriptor(key: "type", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:))),
             NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
         ]
         
         let resultsController = NSFetchedResultsController(
             fetchRequest: request,
             managedObjectContext: DB.shared.mainContext,
-            sectionNameKeyPath: nil,
+            sectionNameKeyPath: "type",
             cacheName: nil
         )
         resultsController.delegate = self
@@ -96,6 +110,14 @@ extension CoreDataViewController: UITableViewDataSource {
         cell.textLabel?.text = gift.name
         
         return cell
+    }
+    
+}
+
+extension CoreDataViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return resultsController.sections?[section].name
     }
     
 }
