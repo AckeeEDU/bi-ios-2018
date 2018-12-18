@@ -84,7 +84,39 @@ branch: `07-view_controllers`
     - selected stav na buňce je potřeba si ošetřit samostatně
     - stejně jako tabulka se používá dequeue
 
-## 9. Networking
-## 10. MapKit & Location
-## 11. CoreData + Realm
+## 9. MapKit & Location
+branch: `09-maps`
+
+- frameworky MapKit a CoreLocation
+- `MKMapView`
+- `CLLocationManager`
+  - získání povolení od uživatele (`NSLocationWhenInUseUsageDescription` v Info.plist)
+  - start/stop získávání pozice
+  - `CLLocationManagerDelegate`
+- protokol `MKAnnotation`
+- správa pinů na mapě, custom piny
+- callouts
+- geocoding/reverse geocoding - překlad GPS lokace na adresu a zpět
+
+## 10. Networking
+branch: ???
+
+`// TODO:`
+
+## 11. Firebase & CoreGraphics
+branch: `11-coregraphics_firebase`
+
+- `drawRect`, kreslení pomocí CoreGraphics
+- konflikty mezi gesture recognizery
+- Firebase
+  - setup SDK, inicializace
+  - práce s realtime DB
+  - CodableFirebase (https://medium.com/@alickdikan/easy-custom-models-and-firebase-in-swift-4-with-codable-43bdb7805b31)
+- jednoduchý example lokalizace
+
+K lokalizaci storyboardů jsem si nakonec vzpomněl, že vlastně něco vím 💡 Zde zajímavé nápady jak to dělat sexy 😉
+https://medium.com/@mario.negro.martin/easy-xib-and-storyboard-localization-b2794c69c9db
+https://github.com/strvcom/localizenib-ios
+
+## 12. CoreData
 ## 12. Tooling, schémata, konfigurace apod.
