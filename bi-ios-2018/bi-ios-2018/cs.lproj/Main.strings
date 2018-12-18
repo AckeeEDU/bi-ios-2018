@@ -1,0 +1,15 @@
+
+/* Class = "UIViewController"; title = "Autolayout"; ObjectID = "0jt-sT-y0H"; */
+"0jt-sT-y0H.title" = "Autolayout";
+
+/* Class = "UIButton"; normalTitle = "Fire 🔥"; ObjectID = "IIT-ue-fC3"; */
+"IIT-ue-fC3.normalTitle" = "Fire 🔥";
+
+/* Class = "UIBarButtonItem"; title = "Push actions"; ObjectID = "L2H-iL-nwP"; */
+"L2H-iL-nwP.title" = "Push actions";
+
+/* Class = "UIViewController"; title = "Actions"; ObjectID = "ONY-Mj-gCL"; */
+"ONY-Mj-gCL.title" = "Actions";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hG3-Vb-kzD"; */
+"hG3-Vb-kzD.text" = "Label";

@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bubblesController = storyboard.instantiateViewController(withIdentifier: "BubblesViewController")
         
         let bubblesNav = UINavigationController(rootViewController: bubblesController)
-        bubblesNav.tabBarItem.title = "Bubbles"
+        bubblesNav.tabBarItem.title = NSLocalizedString("bubbles", comment: "")
         bubblesNav.tabBarItem.image = UIImage(named: "tabbaricon")
         bubblesNav.tabBarItem.badgeValue = "2"
         
