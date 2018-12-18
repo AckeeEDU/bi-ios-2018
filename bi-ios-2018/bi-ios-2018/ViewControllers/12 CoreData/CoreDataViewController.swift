@@ -147,6 +147,31 @@ extension CoreDataViewController: UITableViewDelegate {
         present(alertController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete, let giftName = resultsController.object(at: indexPath).name else { return }
+        
+        let request: NSFetchRequest<Gift> = Gift.fetchRequest()
+        request.predicate = NSPredicate(format: "name = %@", giftName)
+        request.fetchLimit = 1
+        
+        DB.shared.performBackgroundTask { context in
+            let result = try! context.fetch(request)
+            if let objectToDelete = result.first {
+                context.delete(objectToDelete)
+            }
+            try! context.saveIfNeeded()
+        }
+        
+    }
+    
 }
 
 extension CoreDataViewController: NSFetchedResultsControllerDelegate {
