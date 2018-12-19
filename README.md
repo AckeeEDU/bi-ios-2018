@@ -64,6 +64,7 @@ branch: `07-view_controllers`
 
 
 ## 8. ScrollView + TableView + CollectionView
+branch: `08-scrollview`
 
 - `UIScrollView`
     - slouží k zobrazení contentu většího než je velikost viewčka
@@ -119,4 +120,31 @@ https://medium.com/@mario.negro.martin/easy-xib-and-storyboard-localization-b279
 https://github.com/strvcom/localizenib-ios
 
 ## 12. CoreData
+branch: `12-coredata`
+
+### CoreData
+- stack: Model, Context, Coordinator
+- inicializace stačí přes `NSPersistentContainer`
+- používám UI context pouze pro změny v UI, zbytek dělám v background contextu
+  - `persistentStore.performBackgroundTask { context in ... }`
+- `NSFetchRequest` odpovídá zhruba SELECTu v SQL
+  - `NSPredicate` -> filtrování
+  - `NSSortDescriptor` -> řazení
+  - lze specifikovat `limit` a `batchSize` (dávkování)
+- `NSFetchedResultsController` = reaktivní observování změn ve storu
+  - pracuje se sekcemi
+  - při groupování je potřeba seřadit entity podle groupy, aby to správně fungovalo
+- když udělám změnu v contextu, nezapomenu ji uložit!
+- modely musejí mít vždy přiřazený context, nelze je vytvořit bez kontextu
+  - pokud potřebuji model na jiném contextu, než na kterém byl vytvořen, musím si ho vytáhnout znovu
+
+### UserDefaults
+- persistentní dictionary
+- hodnoty nejsou silně typované, je potřeba castovat
+
+### Keychain
+- persistentní dictionary
+- přežije smazání a znovunainstalování appky
+- Obj-C API -> existuje spousta wrapperů
+
 ## 12. Tooling, schémata, konfigurace apod.
