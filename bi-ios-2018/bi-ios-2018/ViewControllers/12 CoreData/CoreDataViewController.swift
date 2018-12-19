@@ -109,7 +109,7 @@ final class CoreDataViewController: UIViewController {
     }
     
     private func insertUsersIfNeeded() {
-        let key = "users_inserted"
+        let key = "users_inserted" // best practice je mít klíč definovaný jednou a jednom místě
         guard !UserDefaults.standard.bool(forKey: key) else { return }
         
         DB.shared.performBackgroundTask { context in
